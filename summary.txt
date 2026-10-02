@@ -1,0 +1,58 @@
+Overview of the Project
+The Finance Dashboard (finance-dashboard) is a personal investment portfolio tracking and wealth management web application built with Next.js and Material UI (MUI).
+
+The application consolidates holdings, tracks real-time portfolio metrics, visualizes asset allocation, logs transactions, and tracks progress towards net worth goals.
+
+Key Features & Components
+Portfolio KPI Metrics: Calculates total portfolio value, total gain/loss ($ and %), estimated dividend income, and progress toward financial goals in real-time.
+Historical Performance Chart: An interactive performance graph supporting 1M, YTD, and 5Y timeframe views.
+Holdings Table: Displays detailed investment rows (Tickers, Accounts, Share counts, Prices, Gain/Loss) with price adjustments.
+Asset & Sector Allocation: Visual breakdown across asset classes (Equity, ETF, Crypto), sectors, and accounts using linear progress bars.
+Movers & Goal Tracking: Highlights top gainers and losers, and tracks progress against net worth milestones.
+Transaction Manager & Activity Feed: Allows users to log Buy, Sell, and Dividend transactions, automatically updating portfolio balances and cost bases.
+Project Structure
+
+
+package.json
+: Defines dependencies, devDependencies, and scripts (dev, build, start, lint).
+
+
+app/layout.js
+: Root layout establishing metadata and foundational structure.
+
+
+app/page.js
+: Client-rendered single page containing all dashboard views, state management, calculations, forms, and charts.
+
+
+app/globals.css
+: Global styling rules.
+
+
+Libraries Used & Their Specific Roles
+1. Core Framework & UI Foundation
+Library	Version	Role & Functionality	Used In
+next	16.2.11	React Framework using App Router. Handles application routing, SSR/SSG setup, page layout orchestration, and metadata.	
+
+app/layout.js
+, 
+
+app/page.js
+react	19.2.4	Core UI engine. Manages state (useState), side-effects (useEffect), and memoized calculations (useMemo).	
+
+app/page.js
+react-dom	19.2.4	DOM rendering layer for React components in the browser.	Next.js internal setup
+2. User Interface & Design System
+Library	Version	Role & Functionality	Used In
+@mui/material	9.2.0	Comprehensive Material Design component suite used for building all dashboard cards, forms, tables, buttons, and progress indicators (Paper, Box, Stack, Typography, Table, TextField, Select, LinearProgress, Tabs, Alert, Chip).	
+
+app/page.js
+@mui/icons-material	9.2.0	Icon set used for UI indicators (ArrowUpward, CurrencyExchange, TrendingUp, Insights, FileUpload, Download).	
+
+app/page.js
+@emotion/react	11.14.0	CSS-in-JS styling engine required by Material UI for component rendering and theme styling.	Material UI internal system
+@emotion/styled	11.14.1	Styled component engine powering Material UI custom styled components.	Material UI internal system
+3. Development Tools & Code Quality
+Library	Version	Role & Functionality	Used In
+eslint	^9	Static code analysis tool for detecting syntax issues and maintaining code standards.	Development environment (npm run lint)
+eslint-config-next	16.2.11	Linting rules tailored specifically for Next.js best practices and hooks validation.	Development environment
